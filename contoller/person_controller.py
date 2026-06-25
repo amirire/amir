@@ -1,5 +1,5 @@
 import re
-from model.db.persondb import *
+from model.db.person_db import *
 
 
 def valid_name(text):

@@ -1,8 +1,10 @@
 from tkinter import *
 import tkinter.ttk as ttk
-from model.db.persondb import *
+
+from contoller.person_controller import save, edit, find_all, remove
+from model.db.person_db import *
 import tkinter.messagebox as msg
-from cotrooler.person_cotroller import *
+from contoller.person_controller import *
 
 
 def reset_form():
