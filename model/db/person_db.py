@@ -46,7 +46,7 @@ def find_by_family_person(family):
     db = mysql.connector.connect(host='localhost', user='root', password='root123', port=3306, database="person_db")
     cursor = db.cursor()
     cursor.execute("select * from person_tbl where family=%s", [family])
-    person_list: cursor.fetchall()
+    person_list= cursor.fetchall()
     cursor.close()
     db.close()
     return person_list
