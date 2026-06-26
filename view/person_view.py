@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter.ttk as ttk
 
-from controller.person_controller import save, edit, find_all, remove
+from contoller.person_controller import save, edit, find_all, remove
 from model.db.person_db import *
 import tkinter.messagebox as msg
 
