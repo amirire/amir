@@ -3,11 +3,11 @@ from typing import List, Any, Dict
 import mysql.connector
 
 
-def save_person(name, family, national_code):
+def save_person(name, family, national_id):
     # connect
     db = mysql.connector.connect(host='localhost', user='root', password='root123', port=3306, database="person_db")
     cursor = db.cursor()
-    cursor.execute("insert into person_tbl(NAME,FAMILY,NATIONAL_ID) values(%s,%s,%s)", (name, family, national_code))
+    cursor.execute("insert into person_tbl(NAME,FAMILY,NATIONAL_ID) values(%s,%s,%s)", (name, family, national_id))
     db.commit()
     cursor.close()
     db.close()
@@ -17,7 +17,7 @@ def edit_person(id, name, family, national_code):
     db = mysql.connector.connect(host='localhost', user='root', password='root123', port=3306, database="person_db")
     cursor = db.cursor()
     cursor.execute('update person_tbl set NAME = %s,FAMILY = %s,NATIONAL_ID = %s where id= %s',
-                   [name, family, national_code, id])
+                   [name, family, national_id, id])
     db.commit()
     cursor.close()
     db.close()
