@@ -13,7 +13,7 @@ def save_person(name, family, national_id):
     db.close()
 
 
-def edit_person(id, name, family, national_code):
+def edit_person(id, name, family, national_id):
     db = mysql.connector.connect(host='localhost', user='root', password='root123', port=3306, database="person_db")
     cursor = db.cursor()
     cursor.execute('update person_tbl set NAME = %s,FAMILY = %s,NATIONAL_ID = %s where id= %s',
